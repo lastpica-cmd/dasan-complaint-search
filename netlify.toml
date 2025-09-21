@@ -1,0 +1,38 @@
+[build]
+  # 빌드 명령어 (필요시)
+  command = "npm install"
+  
+  # 배포할 디렉토리
+  publish = "public"
+  
+  # Functions 디렉토리
+  functions = "netlify/functions"
+
+[build.environment]
+  # Node.js 버전
+  NODE_VERSION = "18"
+
+# API 라우팅 설정
+[[redirects]]
+  from = "/api/search"
+  to = "/.netlify/functions/search"
+  status = 200
+
+[[redirects]]
+  from = "/api/health"
+  to = "/.netlify/functions/health"
+  status = 200
+
+# SPA 라우팅 (정적 파일이 아닌 경우 index.html로)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 헤더 설정
+[[headers]]
+  for = "/api/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Headers = "Content-Type"
+    Access-Control-Allow-Methods = "GET, POST, OPTIONS"

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다산콜센터 민원 키워드 검색</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏛️ 다산콜센터 민원 키워드 검색</h1>
+            <p>키워드를 입력하여 관련 민원 분야를 추천받으세요</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="search-box">
+                    <input 
+                        type="text" 
+                        id="keywordInput" 
+                        placeholder="검색할 키워드를 입력하세요 (예: 주차, 세금, 복지)"
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn">🔍 검색</button>
+                </div>
+            </div>
+
+            <div id="loadingIndicator" class="loading hidden">
+                <div class="spinner"></div>
+                <p>검색 중입니다...</p>
+            </div>
+
+            <div id="resultSection" class="result-section hidden">
+                <div class="result-card">
+                    <h2>검색 결과</h2>
+                    <div id="resultContent"></div>
+                </div>
+            </div>
+
+            <div id="noResultSection" class="no-result hidden">
+                <div class="no-result-card">
+                    <h2>😔 검색 결과가 없습니다</h2>
+                    <p>다른 키워드로 다시 검색해보세요.</p>
+                </div>
+            </div>
+
+            <div id="errorSection" class="error hidden">
+                <div class="error-card">
+                    <h2>❌ 오류가 발생했습니다</h2>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="sample-keywords">
+                <h3>추천 키워드 예시</h3>
+                <div class="keyword-tags">
+                    <span class="keyword-tag" onclick="searchKeyword('주차')">주차</span>
+                    <span class="keyword-tag" onclick="searchKeyword('세금')">세금</span>
+                    <span class="keyword-tag" onclick="searchKeyword('복지')">복지</span>
+                    <span class="keyword-tag" onclick="searchKeyword('교통')">교통</span>
+                    <span class="keyword-tag" onclick="searchKeyword('환경')">환경</span>
+                    <span class="keyword-tag" onclick="searchKeyword('주택')">주택</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
