@@ -60,8 +60,7 @@ function showResult(data) {
         </div>
         
         <div class="recommendation">
-            <h3>🎯 추천 분야</h3>
-            <div class="field">${recommendedField}</div>
+            <div class="field">추천 분야:${recommendedField}</div>
             <p>${recommendedCount}건의 관련 민원이 있습니다</p>
         </div>
         
